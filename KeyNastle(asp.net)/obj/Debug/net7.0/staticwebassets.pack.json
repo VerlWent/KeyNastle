@@ -1,0 +1,353 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\VerlWent\\source\\repos\\KeyNastle\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\KeyNastle.bundle.scp.css",
+      "PackagePath": "staticwebassets\\KeyNastle.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\VerlWent\\source\\repos\\KeyNastle\\wwwroot\\Images\\Catalog.svg",
+      "PackagePath": "staticwebassets\\Images\\Catalog.svg"
+    },
+    {
+      "Id": "C:\\Users\\VerlWent\\source\\repos\\KeyNastle\\wwwroot\\Images\\Clock.svg",
+      "PackagePath": "staticwebassets\\Images\\Clock.svg"
+    },
+    {
+      "Id": "C:\\Users\\VerlWent\\source\\repos\\KeyNastle\\wwwroot\\Images\\Close.svg",
+      "PackagePath": "staticwebassets\\Images\\Close.svg"
+    },
+    {
+      "Id": "C:\\Users\\VerlWent\\source\\repos\\KeyNastle\\wwwroot\\Images\\DisLike.svg",
+      "PackagePath": "staticwebassets\\Images\\DisLike.svg"
+    },
+    {
+      "Id": "C:\\Users\\VerlWent\\source\\repos\\KeyNastle\\wwwroot\\Images\\GreenLike.svg",
+      "PackagePath": "staticwebassets\\Images\\GreenLike.svg"
+    },
+    {
+      "Id": "C:\\Users\\VerlWent\\source\\repos\\KeyNastle\\wwwroot\\Images\\InStock.svg",
+      "PackagePath": "staticwebassets\\Images\\InStock.svg"
+    },
+    {
+      "Id": "C:\\Users\\VerlWent\\source\\repos\\KeyNastle\\wwwroot\\Images\\Like.svg",
+      "PackagePath": "staticwebassets\\Images\\Like.svg"
+    },
+    {
+      "Id": "C:\\Users\\VerlWent\\source\\repos\\KeyNastle\\wwwroot\\Images\\Logo.svg",
+      "PackagePath": "staticwebassets\\Images\\Logo.svg"
+    },
+    {
+      "Id": "C:\\Users\\VerlWent\\source\\repos\\KeyNastle\\wwwroot\\Images\\Mugshot.svg",
+      "PackagePath": "staticwebassets\\Images\\Mugshot.svg"
+    },
+    {
+      "Id": "C:\\Users\\VerlWent\\source\\repos\\KeyNastle\\wwwroot\\Images\\RedDisLike.svg",
+      "PackagePath": "staticwebassets\\Images\\RedDisLike.svg"
+    },
+    {
+      "Id": "C:\\Users\\VerlWent\\source\\repos\\KeyNastle\\wwwroot\\Images\\Search.svg",
+      "PackagePath": "staticwebassets\\Images\\Search.svg"
+    },
+    {
+      "Id": "C:\\Users\\VerlWent\\source\\repos\\KeyNastle\\wwwroot\\Images\\Star.svg",
+      "PackagePath": "staticwebassets\\Images\\Star.svg"
+    },
+    {
+      "Id": "C:\\Users\\VerlWent\\source\\repos\\KeyNastle\\wwwroot\\Images\\Tag.svg",
+      "PackagePath": "staticwebassets\\Images\\Tag.svg"
+    },
+    {
+      "Id": "C:\\Users\\VerlWent\\source\\repos\\KeyNastle\\wwwroot\\Images\\Логотип2.svg",
+      "PackagePath": "staticwebassets\\Images\\Логотип2.svg"
+    },
+    {
+      "Id": "C:\\Users\\VerlWent\\source\\repos\\KeyNastle\\wwwroot\\Images\\Честная сделка.svg",
+      "PackagePath": "staticwebassets\\Images\\Честная сделка.svg"
+    },
+    {
+      "Id": "C:\\Users\\VerlWent\\source\\repos\\KeyNastle\\wwwroot\\css\\Button.css",
+      "PackagePath": "staticwebassets\\css\\Button.css"
+    },
+    {
+      "Id": "C:\\Users\\VerlWent\\source\\repos\\KeyNastle\\wwwroot\\css\\CustomDiv.css",
+      "PackagePath": "staticwebassets\\css\\CustomDiv.css"
+    },
+    {
+      "Id": "C:\\Users\\VerlWent\\source\\repos\\KeyNastle\\wwwroot\\css\\Error.css",
+      "PackagePath": "staticwebassets\\css\\Error.css"
+    },
+    {
+      "Id": "C:\\Users\\VerlWent\\source\\repos\\KeyNastle\\wwwroot\\css\\Login.css",
+      "PackagePath": "staticwebassets\\css\\Login.css"
+    },
+    {
+      "Id": "C:\\Users\\VerlWent\\source\\repos\\KeyNastle\\wwwroot\\css\\ProductMainStyle.css",
+      "PackagePath": "staticwebassets\\css\\ProductMainStyle.css"
+    },
+    {
+      "Id": "C:\\Users\\VerlWent\\source\\repos\\KeyNastle\\wwwroot\\css\\Rainbow-animated.css",
+      "PackagePath": "staticwebassets\\css\\Rainbow-animated.css"
+    },
+    {
+      "Id": "C:\\Users\\VerlWent\\source\\repos\\KeyNastle\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "C:\\Users\\VerlWent\\source\\repos\\KeyNastle\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\VerlWent\\source\\repos\\KeyNastle\\wwwroot\\js\\ProductMainJava.js",
+      "PackagePath": "staticwebassets\\js\\ProductMainJava.js"
+    },
+    {
+      "Id": "C:\\Users\\VerlWent\\source\\repos\\KeyNastle\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "C:\\Users\\VerlWent\\source\\repos\\KeyNastle\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "C:\\Users\\VerlWent\\source\\repos\\KeyNastle\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "C:\\Users\\VerlWent\\source\\repos\\KeyNastle\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "C:\\Users\\VerlWent\\source\\repos\\KeyNastle\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "C:\\Users\\VerlWent\\source\\repos\\KeyNastle\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\VerlWent\\source\\repos\\KeyNastle\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\VerlWent\\source\\repos\\KeyNastle\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\VerlWent\\source\\repos\\KeyNastle\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\VerlWent\\source\\repos\\KeyNastle\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\VerlWent\\source\\repos\\KeyNastle\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "C:\\Users\\VerlWent\\source\\repos\\KeyNastle\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "C:\\Users\\VerlWent\\source\\repos\\KeyNastle\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "C:\\Users\\VerlWent\\source\\repos\\KeyNastle\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\VerlWent\\source\\repos\\KeyNastle\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\VerlWent\\source\\repos\\KeyNastle\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\VerlWent\\source\\repos\\KeyNastle\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\VerlWent\\source\\repos\\KeyNastle\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\VerlWent\\source\\repos\\KeyNastle\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "C:\\Users\\VerlWent\\source\\repos\\KeyNastle\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "C:\\Users\\VerlWent\\source\\repos\\KeyNastle\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "C:\\Users\\VerlWent\\source\\repos\\KeyNastle\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\VerlWent\\source\\repos\\KeyNastle\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\VerlWent\\source\\repos\\KeyNastle\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\VerlWent\\source\\repos\\KeyNastle\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\VerlWent\\source\\repos\\KeyNastle\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\VerlWent\\source\\repos\\KeyNastle\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "C:\\Users\\VerlWent\\source\\repos\\KeyNastle\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "C:\\Users\\VerlWent\\source\\repos\\KeyNastle\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\VerlWent\\source\\repos\\KeyNastle\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\VerlWent\\source\\repos\\KeyNastle\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\VerlWent\\source\\repos\\KeyNastle\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\VerlWent\\source\\repos\\KeyNastle\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\VerlWent\\source\\repos\\KeyNastle\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\VerlWent\\source\\repos\\KeyNastle\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "C:\\Users\\VerlWent\\source\\repos\\KeyNastle\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "C:\\Users\\VerlWent\\source\\repos\\KeyNastle\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "C:\\Users\\VerlWent\\source\\repos\\KeyNastle\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\VerlWent\\source\\repos\\KeyNastle\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "C:\\Users\\VerlWent\\source\\repos\\KeyNastle\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "C:\\Users\\VerlWent\\source\\repos\\KeyNastle\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "C:\\Users\\VerlWent\\source\\repos\\KeyNastle\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\VerlWent\\source\\repos\\KeyNastle\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "C:\\Users\\VerlWent\\source\\repos\\KeyNastle\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "C:\\Users\\VerlWent\\source\\repos\\KeyNastle\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\VerlWent\\source\\repos\\KeyNastle\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\VerlWent\\source\\repos\\KeyNastle\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\VerlWent\\source\\repos\\KeyNastle\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "C:\\Users\\VerlWent\\source\\repos\\KeyNastle\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "C:\\Users\\VerlWent\\source\\repos\\KeyNastle\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "C:\\Users\\VerlWent\\source\\repos\\KeyNastle\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "C:\\Users\\VerlWent\\source\\repos\\KeyNastle\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "C:\\Users\\VerlWent\\source\\repos\\KeyNastle\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "C:\\Users\\VerlWent\\source\\repos\\KeyNastle\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "C:\\Users\\VerlWent\\source\\repos\\KeyNastle\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\VerlWent\\source\\repos\\KeyNastle\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "C:\\Users\\VerlWent\\source\\repos\\KeyNastle\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "C:\\Users\\VerlWent\\source\\repos\\KeyNastle\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.KeyNastle.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.build.KeyNastle.props",
+      "PackagePath": "build\\KeyNastle.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildMultiTargeting.KeyNastle.props",
+      "PackagePath": "buildMultiTargeting\\KeyNastle.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildTransitive.KeyNastle.props",
+      "PackagePath": "buildTransitive\\KeyNastle.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

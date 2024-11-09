@@ -1,0 +1,13 @@
+﻿@model KeyNastle.Resources.Classes.SellerProfileInformation.CombinedSellerInfo
+
+@foreach (var item in Model.productlist)
+{
+    <article data-glow>
+        <div class="glow-container">
+            <img src="https://i.ibb.co/@item.image" style="max-width: 100%; height: auto;">
+            <p>@item.name</p>
+            <p>@item.nameShop</p>
+            <button class="BtnBasket">В корзину @item.price Р</button>
+        </div>
+    </article>
+}

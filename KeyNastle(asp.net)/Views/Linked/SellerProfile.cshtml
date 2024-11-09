@@ -1,0 +1,196 @@
+﻿<style>
+    body p {
+        color: white;
+        font-family: "M PLUS Rounded 1c", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+    }
+
+    .MainDiv {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        z-index: 1;
+        overflow: hidden;
+    }
+
+    .glow-container {
+        position: relative;
+    }
+
+    .FirstDiv {
+        display: flex;
+        justify-content: space-between;
+        flex: 1;
+    }
+
+    .SecondDiv {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        flex: auto;
+    }
+
+    .InfoDiv {
+        border-top: 4px solid #2DDD97;
+        height: 50px;
+        width: 100%;
+    }
+
+    .PreviewContent {
+        border: 2px solid #2DDD97;
+        border-radius: 10px;
+        padding: 10px;
+        margin-bottom: 20px;
+    }
+
+    .OneItem {
+        border: 2px solid #2DDD97;
+        border-radius: 10px;
+        width: 250px;
+        height: 300px;
+        text-align: center;
+    }
+</style>
+
+@model KeyNastle.Resources.Classes.SellerProfileInformation.CombinedSellerInfo
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <link rel="stylesheet" href="/css/CustomDiv.css">
+    <link rel="stylesheet" href="/css/Rainbow-animated.css">
+    <link rel="stylesheet" href="/css/Button.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
+</head>
+<body style="display: grid;
+        place-items: center;
+        min-height: 100vh;
+
+        background: hsl(0 0% 4%);">
+    <main>
+        <article data-glow style="width: 100%; height: 500px;">
+            <div class="glow-container">
+                <div class="MainDiv">
+                    <div class="FirstDiv">
+                        <p class="rainbow-animated" style="font-size: 30px;">Продавец</p>
+                        <p style="font-size: 30px;">654 дней с KeyNastle</p>
+                    </div>
+
+                    <div class="SecondDiv">
+                        <p style="font-size: 40px; margin: 0;">@Model.informationseller.login</p>
+                        <div class="InfoDiv">
+                            <div style="display: flex; justify-content: space-between; margin-left: 20px; margin-right: 20px;">
+                                <p style="font-size: 30px; margin: 0;">@Model.informationseller.countSelles<br>Продаж</p>
+                                <p style="font-size: 30px; margin: 0;">@Model.informationseller.countProduct<br>Товаров</p>
+                                <p style="font-size: 30px; margin: 0;">@Model.informationseller.rating<br>Рейтинг</p>
+                                <p style="font-size: 30px; margin: 0;">@Model.informationseller.countPreviews<br>Отзывов</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <script>
+        $(document).ready(function () {
+            $("#productsDiv").hide();
+            $("#previewsDiv").hide();
+        });
+
+        function ProductsBtnClick() {
+            $("#productsDiv").show();
+            $("#previewsDiv").hide();
+            alert('1');
+        }
+
+        function PreviewsBtnClick() {
+            $("#productsDiv").hide();
+            $("#previewsDiv").show();
+            alert('2');
+        }
+    </script>
+
+    <div style="margin: 50px;">
+        <button class="slide" type="button" id="ProductsBtn" onclick="ProductsBtnClick()">Товары @Model.informationseller.countProduct</button>
+        <button class="slide" type="button" id="PreviewsBtn" onclick="PreviewsBtnClick()">Отзывы @Model.informationseller.countPreviews</button>
+    </div>
+
+    <div id="productsDiv">
+        <main id="RenderDiv" style="justify-content: space-between;">
+            @foreach (var item in Model.productlist)
+            {
+                <article data-glow>
+                    <div class="glow-container">
+                        <img src="https://i.ibb.co/@item.image" style="max-width: 100%; height: auto; overflow:clip;">
+                        <p>@item.name</p>
+                        <p>@item.nameShop</p>
+                        <button class="BtnBasket">В корзину @item.price Р</button>
+                    </div>
+                </article>
+            }
+        </main>
+    </div>
+
+    <div id="previewsDiv">
+        <main style="justify-content: space-between;">
+            <article data-glow style="width: 100%; max-height: 500px; margin-bottom: 100px; overflow-y: scroll; overflow-x: hidden;">
+                <div class="glow-container">
+                    @foreach (var item in Model.previewslist)
+                    {
+                        <div class="PreviewContent">
+                            <div style="display: flex;">
+                                <p style="margin-right: 10px;">К товару:</p>
+                                <p>@item.productName</p>
+
+                                @if (item.ratingContent == 1)
+                                {
+                                    <img src="/Images/GreenLike.svg" style="margin-left: auto; margin-right: 10px;">
+                                }
+                                else
+                                {
+                                    <img src="/Images/RedDisLike.svg" style="margin-left: auto; margin-right: 10px;">
+                                }
+
+                             </div>
+
+                            <p style="font-size: 17px;">@item.content</p>
+                        </div>
+                    }
+                </div>
+            </article>
+        </main>
+    </div>
+
+    <script>
+        const syncPointer = ({ x, y }) => {
+            document.documentElement.style.setProperty('--x', x.toFixed(2))
+            document.documentElement.style.setProperty(
+                '--xp',
+                (x / window.innerWidth).toFixed(2)
+            )
+            document.documentElement.style.setProperty('--y', y.toFixed(2))
+            document.documentElement.style.setProperty(
+                '--yp',
+                (y / window.innerHeight).toFixed(2)
+            )
+        }
+        document.body.addEventListener('pointermove', syncPointer)
+    </script>
+</body>
+</html>

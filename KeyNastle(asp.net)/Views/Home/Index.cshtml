@@ -1,0 +1,188 @@
+﻿@model IEnumerable<KeyNastle.Resources.Classes.Product>
+
+<style>
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .ProductRow {
+        min-width:260px;
+        width: 20%; /* Ширина 20% для 5 элементов в строке */
+        margin: 5px;
+        overflow: hidden; /* Чтобы изображение не выходило за пределы */
+    }
+
+    .ProductRow img {
+        width: 100%; /* 100% ширина для изображения внутри элемента */
+        height: 40%;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+
+    .MainP {
+        color: white;
+        font-family: "Bebas Neue", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 20px;
+        text-align: center;
+        border-bottom: 9px solid #2DDD97;
+        border-radius: 10px;
+        margin-top: 20px;
+    }
+
+    .OneItem {
+        border: 2px solid #2DDD97;
+        border-radius: 10px;
+        width: 250px;
+        height: 300px;
+        text-align: center;
+    }
+
+    .OneItem p {
+        color: white;
+        font-family: "Bebas Neue", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 20px;
+        bottom: 0;
+    }
+
+    .BtnBasket {
+        border: none;
+        border-radius: 10px;
+        height: 40px;
+        width: 200px;
+        background-color: #FBBB43;
+        color: black;
+        font-family: "Bebas Neue", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 20px;
+    }
+
+    .slide:hover, .slide:focus {
+        box-shadow: inset 20em 0 0 0 var(--hover);
+    }
+
+    .slide {
+        --color: #2DDD97;
+        --hover: #66c887;
+    }
+
+    .slide {
+        color: var(--color);
+        transition: 0.25s;
+    }
+
+        .slide:hover, button:focus {
+            border-color: var(--hover);
+            color: #fff;
+        }
+
+    .slide {
+        background: none;
+        border: 2px solid;
+        font: inherit;
+        line-height: 1;
+        margin: 0.5em;
+        padding: 1em 2em;
+    }
+</style>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="~/css/Error.css" />
+
+    <script>
+        $(document).ready(function () {
+            // Обработчик нажатия кнопки
+            $(".slide").click(function (e) {
+                e.preventDefault(); // Предотвратить обновление страницы
+
+                // Получить значение кнопки
+                var collection = $(this).text();
+
+                // Отправить AJAX-запрос
+                $.ajax({
+                    url: "/Home/Collection",
+                    type: "GET",
+                    data: { collection: collection },
+                    success: function (data) {
+
+                        // Обновить div с товарами с помощью полученных данных
+                        document.getElementById('RenderDiv').innerHTML = data;
+                    },
+                    error: function (error) {
+                        console.log(error);
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body style="background-color: #272727;">
+    
+    <div style="margin-top:20px; text-align:center;" >
+        <button class="slide" type="submit">Все товары</button>
+        <button class="slide" type="submit">Новинки</button>
+        <button class="slide" type="submit">Лидеры продаж</button>
+        <button class="slide" type="submit">Популярное</button>
+    </div>
+
+    <div class="RenderDiv" id="RenderDiv">
+        @Html.Partial("_Products", Model)
+    </div>
+    
+</body>
+</html>
+
+
+@*<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CodePen - Proximity Glow Cards</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="./css//ProductMainStyle.css">
+
+</head>
+<body>
+    <!-- partial:index.partial.html -->
+    <div class="container">
+         @foreach (var item in Model)
+                {
+            <article>
+                <div class="glows"></div>
+                <span class="header">
+                    <img src="https://i.ibb.co/@item.Image" style="width: 250px; height: 150px; border-radius: 10px;">
+                </span>
+
+                <span class="badge">
+                    <span>@item.NameShop</span>
+                </span>
+
+                <h2>@item.Name</h2>
+                <button class="BtnBasket">В корзину 450Р</button>
+            </article>
+                }
+    </div>
+    <!-- partial -->
+    <script type="module" src="./js/ProductMainJava.js"></script>
+
+</body>
+</html>*@
+

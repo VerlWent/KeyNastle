@@ -1,0 +1,96 @@
+﻿@model IEnumerable<KeyNastle.Resources.Classes.Product>
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+
+<style>
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .ProductRow {
+        width: 20%; /* Ширина 20% для 5 элементов в строке */
+        min-width: 260px;
+        margin: 5px;
+        overflow: hidden; /* Чтобы изображение не выходило за пределы */
+    }
+
+        .ProductRow img {
+            width: 100%; /* 100% ширина для изображения внутри элемента */
+            height: 40%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+    .MainP {
+        color: white;
+        font-family: "Bebas Neue", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 20px;
+        text-align: center;
+        border-bottom: 9px solid #2DDD97;
+        border-radius: 10px;
+        margin-top: 20px;
+    }
+
+    .OneItem {
+        border: 2px solid #2DDD97;
+        border-radius: 10px;
+        width: 250px;
+        height: 300px;
+        text-align: center;
+    }
+
+        .OneItem p {
+            color: white;
+            font-family: "Bebas Neue", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 20px;
+            bottom: 0;
+        }
+
+    .BtnBasket {
+        border: none;
+        border-radius: 10px;
+        height: 40px;
+        width: 200px;
+        background-color: #FBBB43;
+        color: black;
+        font-family: "Bebas Neue", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 20px;
+    }
+</style>
+
+<!DOCTYPE html>
+<html lang="en">
+<body style="background-color: #272727;">
+    @*@{
+        var request = HttpContextAccessor.HttpContext.Request;
+        var genre = request.Query["genre"];
+    }*@
+
+    @*<p class="MainP">@Html.Raw(genre)</p>*@
+    <p class="MainP">@ViewData["ProductName"]</p>
+    <div class="container">
+        @foreach (var item in Model)
+        {
+            <form class="ProductRow" asp-controller="Home" asp-action="AddToCart" asp-route-id="@item.Id">
+                <div class="OneItem">
+                    <input type="hidden" name="ProductId" value="@item.Id">
+                    <a asp-controller="Home" asp-action="ProductPage" asp-route-id="@item.Id">
+                        <img src="https://i.ibb.co/@item.Image">
+                    </a>
+
+                    <p>@item.Name</p>
+                    <p>@item.NameShop</p>
+                    <button type="submit" class="BtnBasket">В корзину 450Р</button>
+                </div>
+            </form>
+        }
+    </div>
+</body>
+</html>

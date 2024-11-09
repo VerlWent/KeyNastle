@@ -1,0 +1,273 @@
+﻿<style>
+    .HMainDiv {
+        position: relative;
+
+        z-index:2;
+        background-color: #272727;
+        height: 100px;
+        border-bottom: 5px solid #2DDD97;
+    }
+
+    .Hleft {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .Hleft2 {
+        position: absolute;
+        left: 33%;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .Hleft img {
+        height: 100px;
+        width: auto;
+    }
+
+    .Hcenter {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .Hright {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .HInputSearch {
+        background: transparent;
+        border: 2px solid #2DDD97;
+        border-radius: 10px;
+        padding: 10px;
+        width: 200%;
+        height: 50px;
+    }
+
+        .HInputSearch::placeholder {
+            color: white;
+        }
+
+    .HMenuDiv {
+        display: flex;
+    }
+
+    .HBtnSeller {
+        background: transparent;
+        border: 2px solid #2DDD97;
+        border-radius: 10px;
+        height: 50px;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 20px;
+    }
+
+    .Hdropbtn {
+        background: transparent;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+
+    .Hdropdown {
+        position: relative;
+        display: inline-block;
+        border: 2px solid #2DDD97;
+        border-radius: 10px;
+        height: 50px;
+        padding: 2px;
+    }
+
+    .Hdropdown-content {
+        display: none;
+        position: absolute;
+        right: 0;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+
+    .Hdropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+    .Hdropdown-content a:hover {
+        background-color: #f1f1f1;
+    }
+
+    .Hdropdown:hover .Hdropdown-content {
+        display: block;
+    }
+
+    .CategoryDiv {
+        overflow: hidden;
+        z-index: 1;
+        position: absolute;
+        left: 30%;
+        top: 10px;
+        display:none;
+        background: rgb(10, 10, 10, 0.8);
+        min-height: 90vh;
+        width: 130vh;
+    }
+
+        .CategoryDiv p {
+            color: white;
+            font-family: "M PLUS Rounded 1c", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 30px;
+        }
+
+        .CategoryDiv li {
+            color: white;
+            font-family: "M PLUS Rounded 1c", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .CategoryDiv a {
+            color: white;
+            font-family: "M PLUS Rounded 1c", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            color: white;
+            text-decoration:none;
+        }
+
+    .CategoryFlax {
+        position: absolute;
+
+        display: flex;
+        top: 125px;
+        min-height: calc(90vh - 125px);
+        width: 100%;
+    }
+</style>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
+
+    <script>
+        function viewDiv(){
+            var div = document.getElementById("div1");
+                if (div.style.display === "none") {
+                    div.style.display = "block";
+                } else {
+                    div.style.display = "none";
+                }
+                };
+    </script>
+</head>
+<body class="layoutbody">
+    <div id="div1" class="CategoryDiv">
+        <div class="CategoryFlax">
+
+            <div style="text-align: center; margin: 10px; margin-top: 40px; margin-right: 30px;">
+                <ul style="list-style-type:none; padding: 0; text-align: start;">
+                    <li style="font-size: 30px; color: #2DDD97;">Лидеры продаж</li>
+                    <li style="font-size: 30px; color: #2DDD97;">Популярное</li>
+                    <li style="font-size: 30px; color: #2DDD97;">Новинки</li>
+                </ul>
+            </div>
+
+            <div style="text-align: center; margin: 10px; margin-right: 30px;">
+                <p>Жанры</p>
+                <ul style="list-style-type:none; padding: 0; text-align: start;">
+                    <li><a asp-route-genre="Гонки" asp-action="Catalog" asp-controller="Home">Гонки</a></li>
+                    <li><a asp-route-genre="Инди" asp-action="Catalog" asp-controller="Home">Инди</a></li>
+                    <li><a asp-route-genre="Казуальные" asp-action="Catalog" asp-controller="Home">Казуальные</a></li>
+                    <li><a asp-route-genre="Онлайн" asp-action="Catalog" asp-controller="Home">Онлайн</a></li>
+                    <li><a asp-route-genre="Подписка" asp-action="Catalog" asp-controller="Home">Подписка</a></li>
+                    <li><a asp-route-genre="Приключения" asp-action="Catalog" asp-controller="Home">Приключения</a></li>
+                    <li><a asp-route-genre="Ролевые" asp-action="Catalog" asp-controller="Home">Ролевые</a></li>
+                    <li><a asp-route-genre="Симуляторы" asp-action="Catalog" asp-controller="Home">Симуляторы</a></li>
+                    <li><a asp-route-genre="Спорт" asp-action="Catalog" asp-controller="Home">Спорт</a></li>
+                    <li><a asp-route-genre="Стратегии" asp-action="Catalog" asp-controller="Home">Стратегии</a></li>
+                    <li><a asp-route-genre="Экшен" asp-action="Catalog" asp-controller="Home">Экшен</a></li>
+                </ul>
+            </div>
+
+            <div style="text-align: center; margin: 10px;">
+                <p>Программное обеспечение</p>
+                <ul style="list-style-type:none; padding: 0; text-align: start;">
+                    <li><a asp-route-genre="Операционные системы" asp-action="Catalog" asp-controller="Home">Операционные системы</a></li>
+                    <li><a asp-route-genre="Антивирусы" asp-action="Catalog" asp-controller="Home">Антивирусы</a></li>
+                    <li><a asp-route-genre="Утилиты" asp-action="Catalog" asp-controller="Home">Утилиты</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="HMainDiv">
+        <div class="Hleft">
+            <a asp-controller="Home" asp-action="Index">
+                <img src="~/Images/Логотип2.svg" alt="Логотип">
+            </a>
+        </div>
+
+        <div class="Hleft2">
+            <form>
+                <button class="HBtnSeller" type="button" value="Click" onmousedown="viewDiv()"><img src="~/Images/Catalog.svg" style="width:40px">Каталог</button>
+            </form>
+        </div>
+
+        <div class="Hcenter">
+            <form asp-action="Searth" asp-controller="Home">
+                <input style="color:white;" class="HInputSearch" placeholder="Поиск по товарам, категориям" type="search" name="NameProduct">
+            </form>
+        </div>
+
+        <div class="Hright">
+            <div class="HMenuDiv">
+                <form>
+                    <button class="HBtnSeller"><img src="~/Images/Tag.svg" style="width:40px">Продать</button>
+                </form>
+                <div class="Hdropdown" style="float:right;">
+                    <button class="Hdropbtn"><img src="~/Images/Mugshot.svg" style="width:40px"></button>
+                    <div class="Hdropdown-content">
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Profile" asp-action="Index">Профиль</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Cart" asp-action="Index">Корзина</a>
+                        }
+                        else
+                        {
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Identification" asp-action="RegistrationView">Регистрация</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Identification" asp-action="AuthorizationView">Авторизация</a>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<div class="container">
+    <main role="main" class="pb-3">
+        @RenderBody()
+    </main>
+</div>

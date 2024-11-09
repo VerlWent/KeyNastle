@@ -1,0 +1,22 @@
+﻿@model IEnumerable<KeyNastle.Resources.Classes.Product>
+
+
+<p class="MainP">@ViewData["ProductName"]</p>
+<div class="container" id="Container">
+    
+    @foreach (var item in Model)
+        {
+            <form class="ProductRow" asp-controller="Home" asp-action="AddToCart" asp-route-id="@item.Id">
+                <div class="OneItem">
+                    <input type="hidden" name="ProductId" value="@item.Id">
+                    <a asp-controller="ProductPage" asp-action="Index" asp-route-id="@item.Id">
+                        <img src="https://i.ibb.co/@item.Image">
+                    </a>
+
+                    <p>@item.Name</p>
+                    <p>@item.NameShop</p>
+                    <button type="submit" class="BtnBasket">В корзину 450Р</button>
+                </div>
+            </form>
+        }
+</div>

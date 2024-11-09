@@ -1,0 +1,173 @@
+﻿<style>
+    body p{
+        color: white;
+        font-family: "Bebas Neue", sans-serif;
+        font-weight: 100;
+        font-style: normal;
+        font-size: 20px;
+    }
+
+    .MainDiv {
+        display: flex;
+    }
+
+    .MenuDiv {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 10px;
+        height: 50vh;
+    }
+
+    .MenuDiv a {
+        margin-bottom: 20px;
+        color: white;
+        font-family: "Bebas Neue", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 20px;
+    }
+
+    .InfoDiv {
+        flex: 4;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        border: 2px solid #2DDD97;
+        border-radius: 10px;
+        margin: 10px;
+    }
+
+    .pUserName {
+        color: white;
+        font-family: "Bebas Neue", sans-serif;
+        font-weight: 100;
+        font-style: normal;
+        font-size: 30px;
+        border-bottom: 2px solid #2DDD97;
+        margin: 10px;
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+
+    .SecondDiv {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .SecondDiv p {
+        margin: 50px;
+        margin-top: 0;
+    }
+
+    .MainPreview {
+        display: flex;
+        margin: 10px;
+    }
+
+    .SupportDiv {
+        flex: 1;
+        margin: 10px;
+    }
+
+    .PreviewDiv {
+        flex: 4;
+    }
+
+    .PreviewDiv .PreviewContent {
+        border: 2px solid #2DDD97;
+        border-radius: 10px;
+        padding: 10px;
+        margin-bottom: 20px;
+    }
+
+    .BtnSave {
+        border: none;
+        border-radius: 10px;
+        height: 40px;
+        width: 150px;
+        background-color: #FBBB43;
+        color: black;
+        font-family: "Bebas Neue", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 20px;
+    }
+
+</style>
+
+@model KeyNastle.Resources.Classes.DataUserInfoFolder.UserAndPreviewData
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Profile</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="~/Images"/>
+</head>
+<body style="background-color: #272727;">
+    <div class="MainDiv">
+        <div class="MenuDiv">
+            <a asp-controller="Profile" asp-action="Index">Профиль</a>
+            <a asp-controller="Profile" asp-action="PersonalData">Личные данные</a>
+            <a asp-controller="Profile" asp-action="PurchaseHistory">История покупок</a>
+            <a asp-controller="Profile" asp-action="Logout">Выход</a>
+        </div>
+        <div class="InfoDiv">
+            <p class="pUserName">@Model.UserData.NickName</p>
+
+            <div class="SecondDiv">
+
+                @{
+                    DateTime registrationDate = DateTime.Parse(@Model.UserData.RegistrationDate);
+                    int daysSinceRegistration = (DateTime.Now - registrationDate).Days;
+                }
+                <p style="text-align: center;">@Model.UserData.CountBuyProduct<br>Товаров<br>куплено</p>
+                <p style="text-align: center;">@Model.UserData.CountPreview<br>Отзывов<br>оставлено</p>
+                <p style="text-align: center;">@daysSinceRegistration<br>День<br>с KeyNastle</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="MainPreview">
+        <div class="SupportDiv">
+        </div>
+
+        <div class="PreviewDiv">
+            <p style="margin-left: 20px;">Отзывы @Model.PreviewUser.Count()</p>
+            @foreach (var item in Model.PreviewUser)
+                {
+                    <div class="PreviewContent">
+                
+                            <div style="display: flex;">
+                                <p style="margin-right: 10px;">К товару</p>
+                                <p style="color:#2DDD97">@item.ProductName</p>
+
+                                @if(item.Rating == 0)
+                                {
+                                    <img src="/Images/RedDisLike.svg" style="margin-left: auto; margin-right: 10px;">
+                                }
+                                else
+                                {
+                                    <img src="/Images/GreenLike.svg" style="margin-left: auto; margin-right: 10px;">
+                                }
+                            </div>
+
+                            <p style="font-size: 17px;">@item.Content</p>
+                
+                    </div>
+             }
+            <div style="text-align: center;">
+                <button class="BtnSave" style="margin: 10px;">Показать ещё</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

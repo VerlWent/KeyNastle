@@ -1,0 +1,95 @@
+﻿<style>
+
+    .MainDiv {
+        display: flex;
+    }
+
+    .MenuDiv {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 10px;
+        height: 50vh;
+    }
+
+    .MenuDiv a {
+        margin-bottom: 20px;
+        color: white;
+        font-family: "Bebas Neue", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 20px;
+    }
+
+    .InfoDiv {
+        overflow-y: scroll;
+        flex: 4;
+        display: flex;
+        align-items: center;
+        justify-content:flex-start;
+        flex-direction: column;
+        margin: 10px;
+        height: 80vh;
+
+        border: 2px solid #2DDD97;
+        border-radius: 10px;
+    }
+
+    .OneItem {
+        display: flex;
+        border-bottom: 2px solid #2DDD97;
+        margin-bottom: 20px;
+
+        width:80%;
+    }
+
+    .OneItem p {
+        color: white;
+        font-family: "Bebas Neue", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 20px;
+        padding-left: 20px;
+    }
+
+</style>
+
+@model IEnumerable<KeyNastle.Resources.Classes.UserPurchase>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+</head>
+<body style="background-color: #272727;">
+    <div class="MainDiv">
+        <div class="MenuDiv">
+            <a asp-controller="Profile" asp-action="Index">Профиль</a>
+            <a asp-controller="Profile" asp-action="PersonalData">Личные данные</a>
+            <a asp-controller="Profile" asp-action="PurchaseHistory">История покупок</a>
+            <a asp-controller="Profile" asp-action="Logout">Выход</a>
+        </div>
+
+        <div class="InfoDiv">
+            @foreach(var item in Model)
+            {
+                <div class="OneItem">
+                    <img src="https://i.ibb.co/@item.ProductImage" style="width: 100px; height: 100px; object-fit: cover; margin-right: 20px; border-radius: 20px;">
+                    <div class="OneItemP">
+                        <p>@item.ProductName</p>
+                        <p>Дата покупки: @item.DatePurchase</p>
+
+                    </div>
+                    <p style="margin-left:auto;">Цена: @item.ProductPrice₽</p>
+                </div>
+            }
+        </div>
+    </div>
+</body>
+</html>

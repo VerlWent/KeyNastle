@@ -1,0 +1,55 @@
+.slide:hover, .slide:focus {
+    box-shadow: inset 20em 0 0 0 var(--hover);
+}
+
+.slide {
+    --color: #2DDD97;
+    --hover: #66c887;
+}
+
+.slide {
+    color: var(--color);
+    transition: 0.25s;
+}
+
+    .slide:hover, button:focus {
+        border-color: var(--hover);
+        color: #fff;
+    }
+
+.slide {
+    background: none;
+    border: 2px solid;
+    font: inherit;
+    line-height: 1;
+    margin: 0.5em;
+    padding: 1em 2em;
+}
+
+.BtnSave{
+    border: none;
+    border-radius: 10px;
+    height: 40px;
+    width: 150px;
+    background-color:#FBBB43;
+    color: black;
+
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+}
+
+.BtnBasket{
+    border: none;
+    border-radius: 10px;
+    height: 40px;
+    width: 200px;
+    background-color:#FBBB43;
+    color: black;
+
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+}

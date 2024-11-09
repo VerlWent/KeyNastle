@@ -1,0 +1,184 @@
+﻿@model IEnumerable<KeyNastle.Resources.Classes.UserBusket>
+
+
+
+<style>
+    .MainDiv {
+        display: flex;
+        margin: 20px;
+    }
+
+        .MainDiv p {
+            color: white;
+            font-family: "M PLUS Rounded 1c", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+    .MenuDiv {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border: 2px solid #2DDD97;
+        border-radius: 10px;
+        height: 10%;
+        padding: 20px;
+    }
+
+    .InfoDiv {
+        flex: 4;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-direction: column;
+        margin: 10px;
+        height: 80vh;
+    }
+
+    .OneItem {
+        display: flex;
+        border-bottom: 2px solid #2DDD97;
+        margin-bottom: 20px;
+        padding: 5px;
+
+        width:80%;
+    }
+
+    .BtnSave {
+        border: none;
+        border-radius: 10px;
+        height: 40px;
+        width: 150px;
+        background-color: #FBBB43;
+        color: black;
+        font-family: "Bebas Neue", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 20px;
+    }
+
+    .BtnSaveFalse {
+        border: none;
+        border-radius: 10px;
+        height: 40px;
+        width: 150px;
+        background-color: #fbbb4392;
+        color: black;
+        font-family: "Bebas Neue", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 20px;
+        cursor: not-allowed;
+    }
+
+    .LogInformation{
+    display: flex;
+    justify-content: center;
+
+    border-bottom: 5px solid #dd792d;
+
+    text-align: center;
+    width: fit-content;
+
+    margin: 0 auto;
+
+    color:white;
+}
+
+
+</style>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="~/Images/Close.svg"/>
+</head>
+<body style="background-color: #272727;">
+    @if (TempData["DanderMessage"] != null)
+    {
+        <div class="LogInformation" role="alert">
+            @TempData["DanderMessage"]
+        </div>
+    }
+
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="LogInformation" role="alert">
+            @TempData["SuccessMessage"]
+        </div>
+    }
+
+    <div class="MainDiv">
+        <div class="InfoDiv">
+             @foreach (var item in Model)
+             {
+                <div class="OneItem">
+                    <img src="https://i.ibb.co/@item.ProductImage" style="width: 200px; height: 200px; object-fit: cover; margin-right: 20px; border-radius: 20px;">
+                    <div class="OneItemP">
+                        <p>@item.ProductName</p>
+                        <p style="color: #2DDD97;">@item.NameShop</p>
+                    </div>
+                    <div style="margin-left: auto; text-align: center;">
+                        <form asp-action="DeleteProduct" asp-controller="Cart">
+                            <input type="hidden" name="ProductId" value="@item.ProductId">
+                            <button type="submit" style="border:none; background-color:transparent; width: 20px; text-align: start;">
+                                <img src="/Images/Close.svg">
+                            </button>
+                            
+                        </form>
+                        
+                        <p>Цена: @item.Price ₽</p>
+
+                        @if (item.IsStock == false)
+                        {
+                            <p style="color:#f15416">Товар закончился</p>
+                        }
+                    </div>
+                </div>
+            }
+        </div>
+
+        <div class="MenuDiv">
+            <p>Ваш заказ @Model.Count()</p>
+            <p>Итого: @Model.Sum(x => x.Price) ₽</p>
+
+            <form asp-controller="Cart" asp-action="BuyFullBusket">
+
+                @if (@Model.FirstOrDefault(x => x.IsStock == false) != null)
+                {
+                    <button class="BtnSaveFalse">Купить</button>
+                    <p style="color:#f15416">Один или несколько товаров отсутсвуют в продаже</p>
+                }
+                else
+                {
+                    <button class="BtnSave" type="submit">Купить</button>
+                    <p>Вы будете перенаправлены на сайт платежной системы для завершения процедуры оплаты.</p>
+                }
+            </form>
+
+            @*<form action='https://auth.robokassa.ru/Merchant/Index.aspx' method="get">
+                <input type=hidden name=MerchantLogin value="mrh_login">
+                <input type=hidden name=OutSum value="@Model.Sum(x => x.Price)">
+                <input type=hidden name=InvId value="inv_id">
+                <input type=hidden name=Description value="Покупка корзины на сайте KeyNastle">
+                <input type=hidden name=Shp_item value="shp_item">
+                <input type=hidden name=IncCurrLabel value="in_curr">
+                <input type=hidden name=SignatureValue value="crc">
+                <input type=hidden name=Culture value="ru">
+                <input type=submit value='Pay'>
+            </form>*@
+            
+        </div>
+    </div>
+</body>
+</html>

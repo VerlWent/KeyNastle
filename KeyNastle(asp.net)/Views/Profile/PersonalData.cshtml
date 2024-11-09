@@ -1,0 +1,126 @@
+﻿<style>
+
+    .MainDiv {
+        display: flex;
+    }
+
+    .MenuDiv {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 10px;
+        height: 50vh;
+    }
+
+        .MenuDiv a {
+            margin-bottom: 20px;
+            color: white;
+            font-family: "Bebas Neue", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 20px;
+        }
+
+    .InfoDiv {
+        flex: 4;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        border: 2px solid #2DDD97;
+        border-radius: 10px;
+        margin: 10px;
+        height: 80vh;
+    }
+
+        .InfoDiv input {
+            background: transparent;
+            border: 2px solid #2DDD97;
+            height: 30px;
+            width: 40%;
+            color: white;
+            padding: 20px;
+        }
+
+    ::placeholder {
+        color: white;
+    }
+
+    .InfoDiv p {
+        color: white;
+        font-family: "Bebas Neue", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 20px;
+    }
+
+    .BtnSave {
+        border: none;
+        border-radius: 10px;
+        height: 40px;
+        width: 150px;
+        background-color: #FBBB43;
+        color: black;
+        font-family: "Bebas Neue", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 20px;
+    }
+
+</style>
+
+@model KeyNastle.Resources.Classes.DataUserInfoFolder.UserAndPreviewData
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+</head>
+<body style="background-color: #272727;">
+    <div class="MainDiv">
+        <div class="MenuDiv">
+            <a asp-controller="Profile" asp-action="Index">Профиль</a>
+            <a asp-controller="Profile" asp-action="PersonalData">Личные данные</a>
+            <a asp-controller="Profile" asp-action="PurchaseHistory">История покупок</a>
+            <a asp-controller="Profile" asp-action="Logout">Выход</a>
+        </div>
+
+        <form class="InfoDiv" asp-controller="Profile" asp-action="SaveData">
+            <p>Имя пользователя</p>
+            <input name="NickName" value="@Model.UserData.NickName">
+
+            <p>Логин</p>
+            <input value="@Model.UserData.Login" readonly>
+
+            <p>Почта</p>
+            <input value="@Model.UserData.Email" readonly>
+
+            <p>Смена пароля</p>
+            <input type="password" name="OldPassword" style="margin-bottom: 10px;" placeholder="Текущий пароль">
+            <input type="password" name="NewPassword" style="margin-bottom: 10px;" placeholder="Новый пароль">
+
+            @if (TempData["DanderMessage"] != null)
+            {
+                <div class="alert alert-danger" style="color:red" role="alert">
+                    @TempData["DanderMessage"]
+                </div>
+            }
+
+            @if (TempData["SuccessMessage"] != null)
+            {
+                <div class="alert alert-success" style="color:#2DDD97" role="alert">
+                    @TempData["SuccessMessage"]
+                </div>
+            }
+
+            <button type="submit" class="BtnSave">Сохранить</button>
+        </form>
+    </div>
+</body>
+</html>

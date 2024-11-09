@@ -1,0 +1,20 @@
+﻿@model KeyNastle.Resources.Classes.ProductInfoFolder.ProductAndPreviewData
+
+@foreach (var item in Model.previewsInfo)
+{
+    <div class="ReviewsOneItem">
+        <p style="color: #2DDD97;">@item.NickName</p>
+        <div class="ReviewsContent">
+            @if (item.RatingContent == 1)
+            {
+                <img src="/Images/GreenLike.svg" style=" margin-right: 10px;">
+            }
+            else
+            {
+                <img src="/Images/RedDisLike.svg" style=" margin-right: 10px;">
+            }
+            <p>@item.Content</p>
+        </div>
+    </div>
+
+}

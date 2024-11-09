@@ -1,0 +1,377 @@
+﻿<style>
+    body p {
+        color: white;
+        font-family: "M PLUS Rounded 1c", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+    }
+
+    .TopDiv {
+        display: flex;
+    }
+
+    /* Пропуск */
+
+    .LeftDiv {
+        display: flex;
+        flex: 4;
+        border: 4px solid #2DDD97;
+        border-radius: 10px;
+        margin: 10px;
+        padding: 10px;
+    }
+
+        .LeftDiv .ImgDiv {
+            display: flex;
+            align-items: center;
+        }
+
+    .ImgDiv img {
+        border-radius: 10px;
+    }
+
+    .LeftDiv .InfoDiv {
+        margin-left: 10px;
+        align-content: center;
+    }
+
+    /* Пропуск */
+
+    .RightDiv {
+        flex: 1;
+        margin: 10px;
+    }
+
+
+        .RightDiv .First {
+            text-align: center;
+            border: 4px solid #2DDD97;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .RightDiv .Third {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+    .SupportDiv {
+        display: flex;
+        flex: 4;
+        margin-right: 30px;
+        margin-left: 20px;
+    }
+
+    .ByuDiv {
+        display: flex;
+    }
+
+        .ByuDiv .BtnBuy {
+            display: flex;
+            margin-left: auto;
+            align-items: center;
+        }
+
+        .ByuDiv .ReviewsDiv {
+            display: flex;
+            flex: 4;
+        }
+
+    .NullDiv {
+        flex: 1;
+    }
+
+    .ReviewsDiv .First {
+        display: flex;
+        align-items: center;
+        margin-right: 40px;
+    }
+
+    .First img {
+        width: 30px;
+    }
+
+    .BtnSave {
+        border: none;
+        border-radius: 10px;
+        height: 40px;
+        width: 150px;
+        background-color: #FBBB43;
+        color: black;
+        font-family: "Bebas Neue", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 20px;
+    }
+
+    .DescriptionDiv {
+        margin: 10px;
+    }
+
+        .DescriptionDiv .DescriptionBody {
+            padding: 10px;
+            border: 4px solid #2DDD97;
+            border-radius: 10px;
+        }
+
+    .ReviewsDiv {
+        margin: 10px;
+    }
+
+        .ReviewsDiv .ReviewsBody {
+            padding: 10px;
+            border: 4px solid #2DDD97;
+            border-radius: 10px;
+        }
+
+    .ReviewsBody .ReviewsOneItem {
+        border-bottom: 2px solid #8B8B8B;
+    }
+
+    .ReviewsOneItem .ReviewsContent {
+        display: flex;
+    }
+
+    .SetReviewDiv {
+        margin: 10px;
+    }
+
+    .SetReviewBody {
+        padding: 10px;
+        border: 4px solid #2DDD97;
+        border-radius: 10px;
+    }
+
+    .RatingDiv {
+        display: flex;
+        align-items: center;
+        border-bottom: 4px solid #2DDD97;
+    }
+
+    .TextAreaReview {
+        height: 100px;
+        background-color: transparent;
+        font-size: 20;
+        color: white;
+        resize: none;
+        border: none;
+        margin: 5px;
+        outline: none;
+    }
+
+    [type=radio] {
+        position: absolute;
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+        /* IMAGE STYLES */
+        [type=radio] + svg {
+            cursor: pointer;
+        }
+
+    [name="Rating"][value="0"]:checked + svg {
+        fill: #FF4444;
+    }
+
+    [name="Rating"][value="1"]:checked + svg {
+        fill: #2DDD97;
+    }
+</style>
+
+@model KeyNastle.Resources.Classes.ProductInfoFolder.ProductAndPreviewData
+
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="~/Images" />
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            // Обработчик нажатия кнопки
+            $("#BtnSave").click(function (e) {
+                e.preventDefault(); // Предотвратить обновление страницы
+
+                var TextPreview = $("#TextPreviewID").val();
+                var ProductId = $("#ProductIdID").val();
+
+                var Rating = document.querySelector('input[name="Rating"]:checked').value;
+
+                // Отправить AJAX-запрос
+                $.ajax({
+                    url: "/ProductPage/AddPreview",
+                    type: "POST",
+                    data: {
+                        Rating: Rating,
+                        TextPreview: TextPreview,
+                        ProductId: ProductId
+                    },
+                    success: function (data) {
+
+                        // Обновить div с товарами с помощью полученных данных
+                        document.getElementById('ReviewsBody').innerHTML = data;
+                    },
+                    error: function (error) {
+                        console.log(error);
+                    }
+                });
+            });
+        });
+    </script>
+
+</head>
+
+<body style="background-color: #272727;">
+
+    <div class="TopDiv">
+        <div class="LeftDiv">
+            <div class="ImgDiv">
+                <img src="https://i.ibb.co/@Model.productinfo.First().Image" style="height: 200px;">
+            </div>
+            <div class="InfoDiv">
+                <p>@Html.Raw(@Model.productinfo.First().Name)</p>
+
+                <div style="display:flex">
+
+                    @foreach (var item in Model.productinfo[0].Genre)
+                    {
+                        <a asp-route-genre="@item" asp-action="Catalog" asp-controller="Home" style="color:#2DDD97">@item&nbsp;</a>
+                    }
+                </div>
+            </div>
+        </div>
+
+        <div class="RightDiv">
+            <div class="First">
+                <p>Продавец</p>
+                @*<p style="color:#2DDD97;">@Model.productinfo.First().NameShop</p>*@
+                <a style="color:#2DDD97;" asp-action="SellerProfile" asp-controller="Linked" asp-route-login="@Model.productinfo.First().NameShop">@Model.productinfo.First().NameShop</a>
+            </div>
+            <div class="Second">
+                <div class="Third">
+                    <img src="/Images/Честная сделка.svg" style="margin-right: 5px; width:30px">
+                    <p style="color: #2DDD97;">Безопасная сделка</p>
+                </div>
+
+                <p>Деньги резервируются на счету KeyNastle и если товар не соответствует описанию, то деньги вернутся вам полностью.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="ByuDiv">
+        <div class="SupportDiv">
+            <div class="ReviewsDiv">
+                <div class="First">
+                    <img src="/Images/Star.svg">
+                    <p style="margin-left: 10px;">@Model.productinfo.First().RatingProduct</p>
+                </div>
+                <div class="First">
+                    <img src="/Images/Like.svg">
+                    <p style="margin-left: 10px;">@Model.productinfo.First().CountPositiveReviews</p>
+                </div>
+                <div class="First">
+                    <img src="/Images/DisLike.svg">
+                    <p style="margin-left: 10px;">@Model.productinfo.First().CountNegativeReviews</p>
+                </div>
+                <div class="First">
+                    <img src="/Images/Clock.svg">
+                    <p style="margin-left: 10px;">@Model.productinfo.First().CountSales продано</p>
+                </div>
+            </div>
+
+            <div class="BtnBuy">
+                @if (@Model.productinfo.First().CountInStock > 0)
+                {
+                    <img src="/Images/InStock.svg" style="width: 30px; margin-right: 4px;">
+                    <p style="margin-right: 10px;">В наличии</p>
+                }
+                else
+                {
+                    <img src="/Images/Close.svg" style="width: 30px; margin-right: 4px;">
+                    <p style="margin-right: 10px;">Товар закончился</p>
+                }
+
+                <p style="margin-right: 10px;">@Model.productinfo.First().Price ₽</p>
+                <form asp-action="AddToCart" asp-controller="Home">
+                    <input type="hidden" name="ProductId" value="@Model.productinfo.First().Id" />
+                    <button type="submit" class="BtnSave">В корзину</button>
+                </form>
+
+            </div>
+        </div>
+        <div class="NullDiv">
+        </div>
+    </div>
+
+    <div class="DescriptionDiv">
+        <p style="margin: 10px;">Описание товара</p>
+        <div class="DescriptionBody">
+            <p>@Model.productinfo.First().Description</p>
+        </div>
+    </div>
+    @if (User.Identity.IsAuthenticated && Model.productinfo.First().ReviewAvailable)
+    {
+        <div class="SetReviewDiv">
+            <p style="margin: 10px;">Ранее вы покупали данный товар, поэтому не будь букой и оставь свой отзыв)</p>
+            <div class="SetReviewBody">
+                <form style="display:grid;">
+                    <input type="hidden" id="ProductIdID" name="ProductId" value="@Model.productinfo.First().Id">
+
+                    <div class="RatingDiv">
+                        <p style="margin-left: 10px;">Оцените товар: </p>
+
+                        <label style="margin-left: 10px; margin-right: 20px;">
+                            <input type="radio" id="RatingID" name="Rating" value="1" required>
+                            <svg alt="Option 1" width="40" height="36" viewBox="0 0 40 36" fill="White" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M39.975 22.05C39.775 20.6 38.15 19.65 36.4 19.425C36.025 19.375 35.6 19.325 35.175 19.3C35.325 19.275 35.45 19.275 35.575 19.25C37.35 19.05 38.65 18.075 38.45 16.625C38.25 15.175 36.625 14.225 34.875 14C34.025 13.9 33.075 13.825 32.05 13.775H32.025C31.425 13.75 30.8 13.725 30.15 13.725C28.95 13.675 27.375 13.625 26.175 13.525C25.275 13.45 25.15 12.825 25.25 12.2C26.125 9.95 26.6 7.425 26.5 4.925C26.4 2.8 25 0.724995 22.975 0.499995C21.3 0.324995 20.075 1.475 20.5 2.95C21.9 7.77499 15.325 13.5 10 16.725V31.725C14.15 34.3 20.875 35.625 28.7 35.475C29.175 35.475 29.675 35.45 30.25 35.425H30.475C31.025 35.4 31.625 35.35 32.3 35.3C34.075 35.15 36.15 34.025 36.05 32.575C35.975 31.3 35.05 30.6 33.875 30.25C34.55 30.2 35.225 30.15 35.85 30.1C37.625 29.95 38.95 28.975 38.775 27.5C38.625 26.05 37.025 25.075 35.25 24.825C35.2 24.825 35.125 24.8 35.075 24.8C35.8 24.75 36.5 24.725 37.1 24.675C38.875 24.6 40.175 23.5 39.975 22.05ZM5 15.5H0V33H5C6.375 33 7.5 31.875 7.5 30.5V18C7.5 16.6 6.375 15.5 5 15.5Z" />
+                            </svg>
+                        </label>
+
+                        <label>
+                            <input type="radio" id="RatingID" name="Rating" value="0">
+                            <svg alt="Option 2" width="40" height="36" viewBox="0 0 40 36" fill="White" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M5 2.99999H0V20.5H5C6.375 20.5 7.5 19.375 7.5 18V5.5C7.5 4.12499 6.375 2.99999 5 2.99999ZM39.975 13.95C40.175 12.5 38.875 11.4 37.1 11.325C36.475 11.3 35.8 11.25 35.075 11.2C35.125 11.2 35.2 11.175 35.25 11.175C37 10.925 38.6 9.95 38.775 8.49999C38.925 7.04999 37.625 6.075 35.85 5.9C35.225 5.85 34.55 5.79999 33.875 5.74999C35.05 5.37499 35.975 4.7 36.05 3.425C36.15 1.975 34.075 0.849995 32.3 0.699995C31.625 0.649995 31.025 0.599994 30.475 0.574994H30.25C29.675 0.524994 29.175 0.524995 28.7 0.499995C20.875 0.374995 14.15 1.67499 10 4.27499V19.275C15.35 22.5 21.9 28.25 20.525 33.05C20.075 34.525 21.3 35.675 22.975 35.5C25 35.275 26.4 33.225 26.475 31.05C26.575 28.55 26.1 26.025 25.225 23.775C25.125 23.15 25.25 22.525 26.15 22.45C27.375 22.375 28.925 22.3 30.125 22.25C30.775 22.25 31.4 22.225 32 22.2H32.025C33.05 22.15 34.025 22.075 34.85 21.975C36.6 21.75 38.225 20.8 38.425 19.35C38.625 17.9 37.325 16.925 35.55 16.725C35.425 16.7 35.275 16.7 35.15 16.675C35.575 16.65 35.975 16.6 36.375 16.55C38.175 16.35 39.8 15.4 39.975 13.95V13.95Z" />
+                            </svg>
+                        </label>
+                    </div>
+                    <textarea class="TextAreaReview" id="TextPreviewID" name="TextPreview" required autocomplete="off" minlength="20" maxlength="250" placeholder="От 20 до 250 символов"></textarea>
+
+                    <input id="BtnSave" type="button" class="BtnSave" style="justify-self:end;" value="wqeqwe">
+                </form>
+            </div>
+        </div>
+    }
+    @if (Model.previewsInfo == null)
+    {
+
+    }
+    else
+    {
+        <div class="ReviewsDiv" id="ReviewsDiv">
+            <p style="margin: 10px;">Отзывы товара</p>
+            <div class="ReviewsBody">
+                @Html.Partial("_Previews", Model)
+
+                <div style="text-align: center;">
+                    <button class="BtnSave" style="margin: 10px;">Показать ещё</button>
+                </div>
+            </div>
+        </div>
+    }
+</body>
+</html>
